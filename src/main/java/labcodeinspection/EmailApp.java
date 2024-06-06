@@ -2,10 +2,15 @@ package labcodeinspection;
 
 import java.util.Scanner;
 
-
+@SuppressWarnings("PMD.UseUtilityClass")
 public class EmailApp {
 	
 	
+	/**
+	 * The EmailApp class is the entry point for the email application.
+	 * This class should not be instantiated.
+	 * It collects user information and uses the Email class to generate and display email details.
+	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 

@@ -16,9 +16,6 @@ Code Inspection Lab, Paulina Loor Tubay
 <priority>1</priority> 
 </rule> 
 <rule ref="category/java/codestyle.xml/ClassNamingConventions" />
-<rule ref="category/java/errorprone.xml/NonSerializableClass">
-<priority>2</priority> 
-</rule> 
 <rule ref="category/java/errorprone.xml/UseLocaleWithCaseConversions" />
 <rule ref="category/java/documentation.xml/CommentRequired">
     <properties>

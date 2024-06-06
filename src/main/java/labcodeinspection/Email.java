@@ -1,25 +1,32 @@
 package labcodeinspection;
+import java.util.Locale;
 
 public class Email {
 
-	private String m_firstName; 
-	private String m_lastName;
-	private String password = null;
+	final private String m_firstName; 
+	final private String m_lastName;
+	private String password;
 	private String department;
-	private int defaultpasswordLength = 8;
+	final private int defaultpasswordLength = 8;
 	private String email;
 	
 	
+	@SuppressWarnings("PMD.CommentRequired")
 	public Email(String firstName, String lastName) {
 		this.m_firstName = firstName;
 		this.m_lastName = lastName;
 	}
-
+	
+	/**
+	 * Displays the user's information.
+	 * This method prints the user's first name, last name, department, email, and password to the console.
+	 */
 	public void showInfo() {
 		System.out.println("\nFIRST NAME= " + m_firstName + "\nLAST NAME= " + m_lastName);
 		System.out.println("DEPARMENT= " + department + "\nEMAIL= " + email + "\nPASSWORD= " + password);
 	}
-
+	
+	@SuppressWarnings("PMD.CommentRequired")
 	public void setDeparment(int depChoice) {
 		switch (depChoice) {
 		case 1:
@@ -31,6 +38,9 @@ public class Email {
 		case 3:
 			this.department = "acct";
 			break;
+		default:
+            this.department = "unknown";
+            break;
 		}
 	}
 
@@ -43,10 +53,17 @@ public class Email {
 		}
 		return new String(password);
 	}
-
+	
+	/**
+	 * Generates an email address and password for the user.
+	 * The email address is constructed using the user's first name, last name, and department.
+	 * The password is generated randomly with a default length.
+	 * Both the email address and password are assigned to their respective fields.
+	 */
 	public void generateEmail() {
+		Locale locale = Locale.US;
 		this.password = this.randomPassword(this.defaultpasswordLength);
-		this.email = this.m_firstName.toLowerCase() + this.m_lastName.toLowerCase() + "@" + this.department
+		this.email = this.m_firstName.toLowerCase(locale) + this.m_lastName.toLowerCase(locale) + "@" + this.department
 				+ ".espol.edu.ec";
 	}
 }
