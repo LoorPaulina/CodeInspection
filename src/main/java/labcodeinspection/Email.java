@@ -2,13 +2,14 @@ package labcodeinspection;
 
 public class Email {
 
-	private String m_firstName;
+	private String m_firstName; 
 	private String m_lastName;
 	private String password = null;
 	private String department;
 	private int defaultpasswordLength = 8;
 	private String email;
-
+	
+	
 	public Email(String firstName, String lastName) {
 		this.m_firstName = firstName;
 		this.m_lastName = lastName;
